@@ -8,20 +8,19 @@ namespace ConsolePOOProduto.Entidade
         public double Preco;
         public int Quantidade;
 
-        public Produto(string nome, double preco, int quaitidade)
-        {
+        public Produto(string nome, double preco, int quaitidade){
             this.Nome = nome;
             this.Preco = preco;
             this.Quantidade = quaitidade;
         }
-        public Produto(string nome, double preco) {
+        public Produto(string nome, double preco) : this() {
             this.Nome = nome;
             this.Preco = preco;
-            this.Quantidade = 0;// Ou não informar nada
         }
 
         public Produto()
         {
+            this.Quantidade = 10;
         }
 
         public double ValorTotalEmEstoque()

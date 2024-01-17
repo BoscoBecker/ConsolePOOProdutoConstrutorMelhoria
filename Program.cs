@@ -14,7 +14,7 @@ int quantidade = int.Parse(Console.ReadLine());
 Produto produto = new Produto(nome, preco); // Ou Produto produto = new Produto(nome, preco, quantidade);
                                             // Ou Produto produto = new Produto() { Nome = "TV", Preco = 9000.00, Quantidade = 5 };
 
-/// Esse é o  exemplo fazendo o override no método virtual ToString();
+/// Esse é o exemplo fazendo o override no método virtual ToString();
 Console.WriteLine("Dados do produto: " + produto);
 Console.Write("Digite o numero de produtos a ser adicionado no estoque: ");
 produto.AdicionarProdutos(int.Parse(Console.ReadLine()));
