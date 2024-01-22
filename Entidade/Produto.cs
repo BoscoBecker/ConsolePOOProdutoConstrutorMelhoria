@@ -4,60 +4,36 @@ namespace ConsolePOOProduto.Entidade
 {
     internal class Produto
     {
-        /*
-        public string Nome = "";
-        public double Preco;
-        public int Quantidade;
-        */
 
         ///Usando Encapsulamento ...
         private string _nome;
-        private double _preco;
-        private int _quantidade;
-
-
+        //private double _preco;
+        public double Preco { get; private set; }
+        public int Quantidade { get; private set; }
+        //Private int _quantidade;
         public Produto(string nome, double preco, int quaitidade) : this(nome, preco)
         {
             _nome = nome;
-            _preco = preco;
-            _quantidade = quaitidade;
+            Preco = preco;
+            Quantidade = quaitidade;
         }
         public Produto(string nome, double preco) : this()
         {
             _nome = nome;
-            _preco = preco;
+            Preco = preco;
         }
 
-        public Produto()
-        {
-            _quantidade = 10;
-        }
+        public Produto(){ Quantidade = 10;}
 
-        public double ValorTotalEmEstoque()
-        {
-            return _quantidade * _preco;
-        }
+        public double ValorTotalEmEstoque() { return Quantidade * Preco; }
 
-        public void AdicionarProdutos(int quantity)
-        {
-            _quantidade += quantity;
-        }
+        public void AdicionarProdutos(int quantity) { Quantidade += quantity;}
 
-        public void RemoverProdutos(int quantity)
-        {
-            _quantidade -= quantity;
-        }
+        public void RemoverProdutos(int quantity) { Quantidade -= quantity;}
 
-        public string GetNome() {return _nome;}
+        public string GetNome() { return _nome;}
 
-        public int GetQuantidade() { return _quantidade; }
-
-        public double Preco  /// Usando Getter ...
-        {
-            get { return _preco; }
-        }
-
-        public string Nome  /// Usando Getter e setters ...
+        public string Nome
         {
             get { return _nome; }
             set { if (value != null && value.Length > 1)_nome = value;}
@@ -65,8 +41,8 @@ namespace ConsolePOOProduto.Entidade
         public override string ToString()
         {
             return _nome + ", $" +
-                   _preco.ToString("F2", CultureInfo.InvariantCulture) + ", " +
-                   _quantidade + " unidades, Total: " +
+                   Preco.ToString("F2", CultureInfo.InvariantCulture) + ", " +
+                   Quantidade + " unidades, Total: " +
                    ValorTotalEmEstoque().ToString("F2", CultureInfo.InvariantCulture);
 
         }
