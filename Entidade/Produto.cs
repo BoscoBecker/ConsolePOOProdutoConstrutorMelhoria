@@ -4,6 +4,11 @@ namespace ConsolePOOProduto.Entidade
 {
     internal class Produto
     {
+        /*
+        public string Nome = "";
+        public double Preco;
+        public int Quantidade;
+        */
 
         ///Usando Encapsulamento ...
         private string _nome;
@@ -33,7 +38,7 @@ namespace ConsolePOOProduto.Entidade
 
         public string GetNome() { return _nome;}
 
-        public string Nome
+        public string Nome  /// Usando Getter e setters ...
         {
             get { return _nome; }
             set { if (value != null && value.Length > 1)_nome = value;}
